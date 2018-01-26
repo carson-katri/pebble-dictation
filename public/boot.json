@@ -110,7 +110,7 @@
           "six_char_locale": "eng-GBR"
         },
         {
-          "endpoint": "pebble-dictation.herokuapp.com/request?q=",
+          "endpoint": "pebble-dictation.herokuapp.com",
           "four_char_locale": "en_US",
           "six_char_locale": "eng-USA"
         },
