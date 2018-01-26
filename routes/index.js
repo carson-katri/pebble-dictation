@@ -5,6 +5,7 @@ var Nuance = require('nuance');
 
 var path = require('path');
 var fs = require('fs');
+var logger = require('heroku-logger');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -32,7 +33,7 @@ router.post('/*', function(req, res, next) {
 	    }
 	});
 	*/
-	console.log(JSON.stringify(req));
+	logger.info(req);
 	res.set({
 		'Content-Type': 'text/plain;charset=utf-8',
 		'Content-Language': 'en-US',
