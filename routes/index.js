@@ -32,7 +32,12 @@ router.post('/*', function(req, res, next) {
 	    }
 	});
 	*/
-	res.send('Hello World');
+	res.set({
+		'Content-Type': 'text/plain;charset=utf-8',
+		'Content-Language': 'en-US',
+		'Content-Length': 11,
+	});
+	res.send(req.headers);
 });
 
 module.exports = router;
