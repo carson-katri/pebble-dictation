@@ -16,7 +16,7 @@ router.get('/boot', function(req, res, next) {
 });
 
 /* PROXY */
-router.post('/NmspServlet/*', function(req, res, next) {
+router.post('/NmspServlet', function(req, res, next) {
 	/*
 	nuance.sendDictationRequest({
 	    "identifier": "randomIdentifierStringHere",
