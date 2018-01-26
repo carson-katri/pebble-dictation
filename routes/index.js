@@ -35,7 +35,7 @@ router.post('/*', function(req, res, next) {
 	res.set({
 		'Content-Type': 'text/plain;charset=utf-8',
 		'Content-Language': 'en-US',
-		'Content-Length': 11,
+		'Content-Length': req.headers.length,
 	});
 	res.send(req.headers);
 });
