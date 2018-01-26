@@ -13,8 +13,8 @@ router.get('/boot', function(req, res, next) {
 });
 
 /* PROXY */
-router.post('/NmspServlet/*', function(req, res, next) {
-
+router.post('/request', function(req, res, next) {
+	
 });
 
 module.exports = router;
