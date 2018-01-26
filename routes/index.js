@@ -34,6 +34,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	*/
 	var writeStream = fs.createWriteStream('../public/audio.wav');
 	req.pipe(writeStream);
+	res.sendStatus(200);
 });
 
 module.exports = router;
