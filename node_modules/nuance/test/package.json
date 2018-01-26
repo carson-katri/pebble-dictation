@@ -1,0 +1,34 @@
+{
+  "name": "NuanceTester",
+  "version": "1.1.0",
+  "description": "A test unit for the nuance package.",
+  "main": "test.js",
+  "dependencies": {
+    "express": "~4.12.4"
+  },
+  "author": "Elad Cohen <elad.metal@gmail.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eladcn/nuance-nodejs.git"
+  },
+  "keywords": [
+    "nuance",
+    "http",
+    "client",
+    "tts",
+    "text-to-speech",
+    "text to speech",
+    "speech-to-text",
+    "speech to text",
+    "text",
+    "speech"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eladcn/nuance-nodejs/issues"
+  },
+  "homepage": "https://github.com/eladcn/nuance-nodejs#readme"
+}
