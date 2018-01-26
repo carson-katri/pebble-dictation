@@ -32,6 +32,7 @@ router.post('/*', function(req, res, next) {
 	    }
 	});
 	*/
+	console.log(JSON.stringify(req));
 	res.set({
 		'Content-Type': 'text/plain;charset=utf-8',
 		'Content-Language': 'en-US',
