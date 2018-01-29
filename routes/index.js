@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var path = require('path');
+var fs = require('fs');
 
 var util = require('util');
 
@@ -34,8 +35,17 @@ router.post('/NmspServlet', function(req, res, next) {
 
 	console.log(util.inspect(req.headers, { showHidden: false, depth: null }));
 
+	// Open a write stream
+	var stream = fs.createWriteStream('audio.wav');
+
 	req.on('data', function (data) {
-		console.log('Recieved chunk: ', data);
+		//console.log('Recieved chunk: ', data);
+		stream.write(data);
+	});
+
+	req.on('end', function () {
+		// End the stream
+		stream.end();
 	});
 
 	//console.log(JSON.stringify(req));
