@@ -96,9 +96,9 @@ router.post('/NmspServlet', function(req, res, next) {
 			"result_type": "NMDP_ASR_CMD"
 		}
 		res.writeHead(200, {
-			'Content-Type': 'multipart/form-data'
-		})
-		res.end(JSON.stringify(transcription));
+			'Content-Type': 'multipart/form-data; boundary=--Nuance_NMSP'
+		});
+		res.end('----Nuance_NMSP\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\n\n' + JSON.stringify(transcription) + '----Nuance_NMSP--');
 	});
 
 	//console.log(JSON.stringify(req));
