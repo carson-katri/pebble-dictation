@@ -75,7 +75,7 @@ router.post('/NmspServlet', function(req, res, next) {
 				838
 			],
 			"transcriptions": [
-				"Hello World"
+				"Hello world"
 			],
 			"cadence_regulatable_result": "completeRecognition",
 			"words": [
@@ -89,7 +89,10 @@ router.post('/NmspServlet', function(req, res, next) {
 						"word": "world"
 					}
 				]
-			]
+			],
+			"NMAS_PRFX_TRANSACTION_ID": "2",
+			"NMAS_PRFX_SESSION_ID": req.get('x-request-id'),
+			"result_type": "NMDP_ASR_CMD"
 		}
 		res.send(transcription);
 	});
