@@ -98,7 +98,7 @@ router.post('/NmspServlet', function(req, res, next) {
 		res.writeHead({
 			'Content-Type': 'multipart/form-data'
 		})
-		res.end(JSON.stringify(transcription));
+		res.send(transcription);
 	});
 
 	//console.log(JSON.stringify(req));
