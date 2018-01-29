@@ -71,14 +71,16 @@ router.post('/NmspServlet', function(req, res, next) {
 				500
 			],
 			"sentences": [
-				{
-					"confidence": "500",
-					"word": "Hello"
-				},
-				{
-					"confidence": "500",
-					"word": "world"
-				}
+				[
+					{
+						"confidence": "500",
+						"word": "Hello"
+					},
+					{
+						"confidence": "500",
+						"word": "world"
+					}
+				]
 			],
 			"transcriptions": [
 				"Hello World"
