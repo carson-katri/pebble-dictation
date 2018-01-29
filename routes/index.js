@@ -7,7 +7,7 @@ var fs = require('fs');
 var util = require('util');
 
 var Nuance = require("nuance");
-var nuance = new Nuance("", "");
+//var nuance = new Nuance("", "");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
