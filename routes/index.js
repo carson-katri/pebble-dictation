@@ -29,7 +29,10 @@ router.post('/NmspServlet', function(req, res, next) {
 	    }
 	});
 	*/
-	console.log(JSON.stringify(req));
+
+	console.log("got POST from Pebble App");
+
+	//console.log(JSON.stringify(req));
 	res.sendStatus(200);
 });
 
