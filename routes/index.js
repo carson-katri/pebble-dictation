@@ -44,20 +44,6 @@ router.post('/NmspServlet', function(req, res, next) {
 	req.on('data', function (data) {
 		//console.log('Recieved chunk: ', data);
 		stream.write(data);
-
-		nuance.sendDictationRequest({
-			"identifier": "randomIdentifierStringHere", // The user identifier (please refer to Nuance's documentation for more info).
-			"language": "en-US", // The language code (please refer to Nuance's documentation for more info).
-			"path": "audio.amr", // The path to the file you would like to send to Nuance.
-			"additionalHeaders": {}, // If you'd like to supply more headers or replace the default headers, supply them here.
-			"success": function(resp){ // The success callback function.
-				console.log(resp);
-			},
-			"error": function(resp){ //The error callback function - returns the response from Nuance that you can debug.
-				console.log("An error was occurred.");
-				console.log(resp);
-			}
-		});
 	});
 
 	req.on('end', function () {
