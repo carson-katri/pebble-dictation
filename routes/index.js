@@ -36,7 +36,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	console.log(util.inspect(req.headers, { showHidden: false, depth: null }));
 
 	// Open a write stream
-	var stream = fs.createWriteStream('../public/audio.wav');
+	var stream = fs.createWriteStream(path.join(__dirname, '../public', 'audio.wav'));
 
 	req.on('data', function (data) {
 		//console.log('Recieved chunk: ', data);
