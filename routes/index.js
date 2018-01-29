@@ -30,7 +30,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	});
 	*/
 
-	console.log("got POST from Pebble App");
+	console.log("POST req: ", req);
 
 	//console.log(JSON.stringify(req));
 	res.sendStatus(200);
