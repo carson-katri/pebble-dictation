@@ -3,6 +3,8 @@ var router = express.Router();
 
 var path = require('path');
 
+var util = require('util');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Express' });
@@ -30,7 +32,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	});
 	*/
 
-	console.log("POST req: ", req);
+	console.log(util.inspect(req, { showHidden: false, depth: null });
 
 	//console.log(JSON.stringify(req));
 	res.sendStatus(200);
