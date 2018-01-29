@@ -34,6 +34,10 @@ router.post('/NmspServlet', function(req, res, next) {
 
 	console.log(util.inspect(req.headers, { showHidden: false, depth: null }));
 
+	req.on('data', function (data) {
+		console.log('Recieved chunk: ', data);
+	});
+
 	//console.log(JSON.stringify(req));
 	res.sendStatus(200);
 });
