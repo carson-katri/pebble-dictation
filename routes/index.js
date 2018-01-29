@@ -33,13 +33,8 @@ router.post('/*', function(req, res, next) {
 	    }
 	});
 	*/
-	logger.info(JSON.stringify(req));
-	res.set({
-		'Content-Type': 'text/plain;charset=utf-8',
-		'Content-Language': 'en-US',
-		'Content-Length': req.headers.length,
-	});
-	res.send(req.headers);
+	console.log(JSON.stringify(req));
+	res.sendStatus(200);
 });
 
 module.exports = router;
