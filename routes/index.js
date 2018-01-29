@@ -37,6 +37,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	*/
 
 	console.log(util.inspect(req.headers, { showHidden: false, depth: null }));
+	console.log(util.inspect(req.body, { showHidden: false, depth: null }));
 
 	// Open a write stream
 	var stream = fs.createWriteStream(path.join(__dirname, '../public', 'audio.raw'));
@@ -91,7 +92,7 @@ router.post('/NmspServlet', function(req, res, next) {
 				]
 			],
 			"NMAS_PRFX_TRANSACTION_ID": "2",
-			"NMAS_PRFX_SESSION_ID": req.get('x-request-id'),
+			"NMAS_PRFX_SESSION_ID": 
 			"result_type": "NMDP_ASR_CMD"
 		}
 		res.send(transcription);
