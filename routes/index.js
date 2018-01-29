@@ -92,7 +92,7 @@ router.post('/NmspServlet', function(req, res, next) {
 				]
 			],
 			"NMAS_PRFX_TRANSACTION_ID": "2",
-			"NMAS_PRFX_SESSION_ID": 
+			"NMAS_PRFX_SESSION_ID": "",
 			"result_type": "NMDP_ASR_CMD"
 		}
 		res.send(transcription);
