@@ -113,7 +113,7 @@ router.post('/NmspServlet', function(req, res, next) {
 						"time": "20180129103658205"
 					}
 				]
-			}
+			},
 			"result_type": "NMDP_ASR_CMD"
 		}
 
