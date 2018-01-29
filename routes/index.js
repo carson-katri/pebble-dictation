@@ -98,14 +98,31 @@ router.post('/NmspServlet', function(req, res, next) {
 			],
 			"NMAS_PRFX_TRANSACTION_ID": "2",
 			"NMAS_PRFX_SESSION_ID": session,
+			"audio_transfer_info": {
+				"audio_id": 21609,
+				"nss_server": "172.16.61.219:4505",
+				"end_time": "30180129103658131",
+				"start_time": "20180129103658068",
+				"packages": [
+					{
+						"bytes": 640,
+						"time": "30180129103658177"
+					},
+					{
+						"bytes": 640,
+						"time": "20180129103658205"
+					}
+				]
+			}
 			"result_type": "NMDP_ASR_CMD"
 		}
+
 		res.writeHead(200, {
 			'Nuance-Context': context,
 			'Nuance-SessionId': session,
 			'Content-Type': 'multipart/form-data; boundary=--Nuance_NMSP_' + boundary
 		});
-		res.end('----Nuance_NMSP_' + boundary + '\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\n\n' + JSON.stringify(transcription) + '\n----Nuance_NMSP_' + boundary + '--');
+		res.end('----Nuance_NMSP_' + boundary + '\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\nNuance-Context: ' + context + '\n\n' + JSON.stringify(transcription) + '\n----Nuance_NMSP_' + boundary + '--');
 	});
 
 	//console.log(JSON.stringify(req));
