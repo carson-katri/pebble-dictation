@@ -7,7 +7,7 @@ var fs = require('fs');
 var util = require('util');
 
 var Nuance = require("nuance");
-//var nuance = new Nuance("", "");
+var nuance = new Nuance("", "");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -49,7 +49,42 @@ router.post('/NmspServlet', function(req, res, next) {
 	req.on('end', function () {
 		// End the stream
 		stream.end();
-		res.send('Hello World');
+		/*
+		nuance.sendDictationRequest({
+			"identifier": req.get('x-request-id'),
+			"language": "en-US",
+			"path": path.join(__dirname, '../public', 'audio.raw'),
+			"success": function(resp){
+				console.log(resp);
+				res.send(resp);
+			},
+			"error": function(resp){ //The error callback function - returns the response from Nuance that you can debug.
+				console.log("An error was occurred.");
+				console.log(resp);
+				res.send(resp);
+			}
+		});
+		*/
+		var transcription =
+		{
+			"confidences": [
+				500
+			],
+			"sentences": [
+				{
+					"confidence": "500",
+					"word": "Hello"
+				},
+				{
+					"confidence": "500",
+					"word": "world"
+				}
+			],
+			"transcriptions": [
+				"Hello World"
+			]
+		}
+		res.send(transcription);
 	});
 
 	//console.log(JSON.stringify(req));
