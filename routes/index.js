@@ -66,6 +66,11 @@ router.post('/NmspServlet', function(req, res, next) {
 			}
 		});
 		*/
+
+		var boundary = "vutc5w1XobDdefsYG3wq";
+		var session = "ed735ead-973e-4144-828f-65a7bc69f286";
+		var context = "3769d8b4-1780-4b4c-afb1-43274b5b363e";
+
 		var transcription =
 		{
 			"final_response": 1,
@@ -92,13 +97,15 @@ router.post('/NmspServlet', function(req, res, next) {
 				]
 			],
 			"NMAS_PRFX_TRANSACTION_ID": "2",
-			"NMAS_PRFX_SESSION_ID": "",
+			"NMAS_PRFX_SESSION_ID": session,
 			"result_type": "NMDP_ASR_CMD"
 		}
 		res.writeHead(200, {
-			'Content-Type': 'multipart/form-data; boundary=--Nuance_NMSP'
+			'Nuance-Context': context,
+			'Nuance-SessionId': session,
+			'Content-Type': 'multipart/form-data; boundary=--Nuance_NMSP_' + boundary
 		});
-		res.end('----Nuance_NMSP\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\n\n' + JSON.stringify(transcription) + '----Nuance_NMSP--');
+		res.end('----Nuance_NMSP_' + boundary + '\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\n\n' + JSON.stringify(transcription) + '----Nuance_NMSP_' + boundary + '--');
 	});
 
 	//console.log(JSON.stringify(req));
