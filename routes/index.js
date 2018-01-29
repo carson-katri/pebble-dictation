@@ -32,7 +32,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	});
 	*/
 
-	console.log(util.inspect(req, { showHidden: false, depth: null });
+	console.log(util.inspect(req, { showHidden: false, depth: null }));
 
 	//console.log(JSON.stringify(req));
 	res.sendStatus(200);
