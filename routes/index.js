@@ -105,7 +105,7 @@ router.post('/NmspServlet', function(req, res, next) {
 			'Nuance-SessionId': session,
 			'Content-Type': 'multipart/form-data; boundary=--Nuance_NMSP_' + boundary
 		});
-		res.end('----Nuance_NMSP_' + boundary + '\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\n\n' + JSON.stringify(transcription) + '----Nuance_NMSP_' + boundary + '--');
+		res.end('----Nuance_NMSP_' + boundary + '\nContent-Disposition: form-data; name="Query Result"\nContent-Type: application/JSON; charset=utf-8\n\n' + JSON.stringify(transcription) + '\n----Nuance_NMSP_' + boundary + '--');
 	});
 
 	//console.log(JSON.stringify(req));
