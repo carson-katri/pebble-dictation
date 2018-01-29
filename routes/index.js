@@ -39,7 +39,7 @@ router.post('/NmspServlet', function(req, res, next) {
 	});
 
 	//console.log(JSON.stringify(req));
-	res.sendStatus(200);
+	//res.sendStatus(200);
 });
 
 module.exports = router;
