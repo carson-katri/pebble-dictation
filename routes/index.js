@@ -67,23 +67,28 @@ router.post('/NmspServlet', function(req, res, next) {
 		*/
 		var transcription =
 		{
+			"final_response": 1,
+			"result_format": "rec_text_results",
+			"prompt": "",
+			"status_code": 0,
 			"confidences": [
-				500
-			],
-			"sentences": [
-				[
-					{
-						"confidence": "0.501",
-						"word": "Hello"
-					},
-					{
-						"confidence": "0.501",
-						"word": "world"
-					}
-				]
+				838
 			],
 			"transcriptions": [
 				"Hello World"
+			],
+			"cadence_regulatable_result": "completeRecognition",
+			"words": [
+				[
+					{
+						"confidence": "1.0",
+						"word": "Hello\\*no-space-before"
+					},
+					{
+						"confidence": "1.0",
+						"word": "world"
+					}
+				]
 			]
 		}
 		res.send(transcription);
