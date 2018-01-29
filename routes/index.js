@@ -95,7 +95,7 @@ router.post('/NmspServlet', function(req, res, next) {
 			"NMAS_PRFX_SESSION_ID": "",
 			"result_type": "NMDP_ASR_CMD"
 		}
-		res.writeHead({
+		res.writeHead(200, {
 			'Content-Type': 'multipart/form-data'
 		})
 		res.send(transcription);
