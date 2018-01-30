@@ -6,9 +6,6 @@ var fs = require('fs');
 
 var util = require('util');
 
-var Nuance = require("nuance");
-var nuance = new Nuance("", "");
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Express' });
@@ -18,23 +15,8 @@ router.get('/boot', function(req, res, next) {
 	res.sendFile(path.join(__dirname, '../public', 'boot.json'));
 });
 
-/* PROXY */
+/* POST NmspServlet (Pebble dictation) */
 router.post('/NmspServlet', function(req, res, next) {
-	/*
-	nuance.sendDictationRequest({
-	    "identifier": "randomIdentifierStringHere",
-	    "language": "en-US",
-	    "path": "audio.wav",
-	    "additionalHeaders": {}, //If you'd like to supply more headers or replace the default headers, supply them here. 
-	    "success": function(resp){ //The success callback function. 
-	        console.log(resp);
-	    },
-	    "error": function(resp){ //The error callback function - returns the response from Nuance that you can debug. 
-	        console.log("An error was occurred.");
-	        console.log(resp);
-	    }
-	});
-	*/
 
 	console.log(util.inspect(req.headers, { showHidden: false, depth: null }));
 	console.log(util.inspect(req.body, { showHidden: false, depth: null }));
@@ -116,7 +98,7 @@ router.post('/NmspServlet', function(req, res, next) {
 			},
 			"result_type": "NMDP_ASR_CMD"
 		}
-
+		
 		res.writeHead(200, {
 			'Nuance-Context': context,
 			'Nuance-SessionId': session,
@@ -124,9 +106,6 @@ router.post('/NmspServlet', function(req, res, next) {
 		});
 		res.end('----Nuance_NMSP_' + boundary + '\nContent-Disposition: form-data; name="QueryResult" \nContent-Type: application/JSON; charset=utf-8\nNuance-Context: ' + context + '\n\n' + JSON.stringify(transcription) + '\n----Nuance_NMSP_' + boundary + '--');
 	});
-
-	//console.log(JSON.stringify(req));
-	//res.sendStatus(200);
 });
 
 module.exports = router;

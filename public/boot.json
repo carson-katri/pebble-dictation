@@ -28,7 +28,7 @@
       "post_activity_endpoint": "https://health-write-api.getpebble.com/v1/activity",
       "post_settings_endpoint": "https://health-write-api.getpebble.com/v1/settings"
     },
-    "href": "https://boot.getpebble.com/api/config/ios/v3/207/28",
+    "href": "https://pebble-dictation.herokuapp.com/boot",
     "id": "ios/v3/207/28",
     "keen_io": {
       "project_id": "52e205f405cd6662b9000000",
